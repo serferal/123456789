@@ -1,24 +1,14 @@
-.card{
-    margin-bottom: 5px;
-
-}
-.create{
-    margin-bottom: 5px;
-
-
-}
-
-
-
-
-
 /* tasks.css */
 
 /* Estilos para el cuerpo del formulario */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
     padding: 20px;
+    height: 100vh; /* 100% del viewport height */
+    margin: 0; /* Eliminar márgenes predeterminados */
+    background-image: linear-gradient(to top, #e6b980 0%, #eacda3 50%, #eacda3 50%, #eacda3 100%);
+
+
 }
 
 /* Estilos para el encabezado */
@@ -28,12 +18,58 @@ h1 {
     margin-bottom: 20px;
 }
 
+/* Estilos para la creación de nuevas tareas */
+.create {
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Contenedor de tarjetas con CSS Grid */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Columnas de tamaño mínimo de 300px */
+    gap: 20px; /* Espacio entre las tarjetas */
+}
+
+/* Estilos para las tarjetas */
+.card {
+    box-sizing: border-box; /* Incluir el padding y el border en el tamaño total */
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: .25rem;
+    padding: 1rem;
+    word-wrap: break-word;
+    text-align: center;
+}
+
+.card-title p {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.card-title a {
+    text-decoration: none; /* Elimina el subrayado */
+    color: inherit; /* Hereda el color del texto del elemento padre */  
+}
+
+.card-text {
+    margin-top: 0.5rem;
+    color: #555;
+}
+
 /* Estilos para el formulario */
 form {
+    border-radius: 5px;
+    padding: 20px;
+}
+form .edit {
+    margin-left: 0%;
+    width: 50%;
     background-color: #fff;
     border-radius: 5px;
     padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Estilos para las etiquetas de los campos */
@@ -66,3 +102,42 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background-color: #0056b3;
 }
+
+/* Estilos para la última tarjeta */
+.last-card {
+    grid-column: 1 / -1; /* Ocupa todas las columnas disponibles */
+    justify-self: start; /* Alinea la tarjeta a la izquierda */
+}
+
+
+.mt-5 {
+    margin-top: 3rem !important;
+}
+
+/* center-container.css */
+
+/* Estilos para el contenedor principal */
+.container {
+    width: 100%; /* Ancho máximo */
+    max-width: 600px; /* Ancho máximo recomendado para el contenido */
+    margin: 0 auto; /* Margen automático a la izquierda y derecha para centrar el contenedor */
+    padding: 20px; /* Espacio interno */
+    box-sizing: border-box; /* Incluir el padding y el border en el tamaño total */
+    border-radius: 5px; /* Borde redondeado */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    background-color: white;
+}
+
+/* Estilos adicionales para el contenido dentro del contenedor, si es necesario */
+a{
+    text-decoration: none;
+    color: inherit;
+    ;
+}
+
+textarea #description {
+    rows: 4; /* Número de filas a mostrar */
+}
+
+
+

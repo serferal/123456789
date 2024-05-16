@@ -8,10 +8,14 @@ use Illuminate\Http\Request;
 class TaskController extends Controller
 
 {
-    
+
     public function index()
     {
-        $tasks = Task::all();
+       // $tasks = Task::all();
+        //return view('tasks.index', compact('tasks'));
+
+        // Obtener las tareas ordenadas por fecha de creación descendente
+        $tasks = Task::orderBy('created_at', 'desc')->get();
         return view('tasks.index', compact('tasks'));
     }
 
